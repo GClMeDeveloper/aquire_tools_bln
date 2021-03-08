@@ -8,8 +8,9 @@ class Coords:
     def gen_cart_graph(self):
         dictionary = {}
         for digit in self.axis:
-            for d in self.axis:
-                dictionary[f"({digit}, {d})"] = [digit, d]
+            for number in self.axis:
+                for num in self.axis:
+                    dictionary[f"({digit}, {number}, {num})"] = [digit, number, num]
         return dictionary
 
 
