@@ -15,3 +15,10 @@ class BlendObject:
 
     def __repr__(self):
         print(self.__name__)
+
+    def scale_half_down(self):
+        self.__name__.scale = [0.5, 0.5, 0.5]
+
+    def position_self(self, x, y):
+        self.scale_half_down()
+        self.__name__.position = [x, y, 0.5]
