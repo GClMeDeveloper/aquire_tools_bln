@@ -15,14 +15,14 @@ class Coords:
 
 
 class Automata(Coords):
-    def __init__(self, rules, reach):
+    def __init__(self):
         super().__init__()
         self.start_grid = self.gen_cart_graph()
         pass
 
 
 class Cell(Automata):
-    def __init__(self):
-        super().__init__(rules=None, reach=None)
+    def __init__(self, rules, initial_20x20x20_placements):
+        super().__init__()
         pass
 
