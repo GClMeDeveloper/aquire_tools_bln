@@ -3,7 +3,7 @@ import bpy as b
 
 class BlendObject:
     def __init__(self, **object_type):
-        self.object_type = dict(object_type.items())
+        self.object_type = dict(object_type)
         self.possible_types = ["cube", "uv_sphere"]
 
         if self.object_type.get(self.possible_types[0]):
@@ -16,9 +16,8 @@ class BlendObject:
     def __repr__(self):
         print(self.__name__)
 
-    def scale_half_down(self):
-        self.__name__.scale = [0.5, 0.5, 0.5]
+    def scale_evenly(self, scale_modifier):
+        self.__name__.scale = [scale_modifier, scale_modifier, scale_modifier]
 
     def position_self(self, x, y):
-        self.scale_half_down()
-        self.__name__.position = [x, y, 0.5]
+        self.__name__.location = [x, y, 0.5]
